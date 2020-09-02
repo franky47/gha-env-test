@@ -11,4 +11,4 @@ inputs:
       The input we're trying to spoof
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'main.js'
