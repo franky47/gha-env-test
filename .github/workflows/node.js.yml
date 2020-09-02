@@ -23,6 +23,6 @@ jobs:
       name: Simulate evil action
       with:
         INPUT_FOO: evil
-    - run: node -e "console.log(`INPUT_FOO=${process.env.INPUT_FOO}`);console.dir(process.env);console.log(`Evil ? ${process.env.INPUT_FOO === 'evil'}`)"
+    - run: node -e "console.log(\`INPUT_FOO=\${process.env.INPUT_FOO}\`)"
       name: This action does not specify 'foo'
       # Here, foo = 'evil'
