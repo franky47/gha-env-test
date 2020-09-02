@@ -20,9 +20,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - uses: allenevans/set-env@67961d8
-      name: Simulate evil action
+      name: Simulate evil action which exports an environment variable for the whole job
       with:
         INPUT_FOO: evil
     - run: node -e "console.log(\`INPUT_FOO=\${process.env.INPUT_FOO}\`)"
-      name: This action does not specify 'foo'
+      name: Check environment from Node
       # Here, foo = 'evil'
+    - uses: franky47/gha-env-test@master
+      name: Vulnerable Node action
+    - uses: franky47/gha-env-test@master
+      name: Input override takes precedence
+      with:
+        foo: bar
