@@ -1,0 +1,14 @@
+name: GitHub Actions Environment Injection Test
+description: Testing environment variables injection between steps
+author: Francois Best
+branding:
+  icon: alert-triangle
+  color: red
+inputs:
+  foo:
+    required: false
+    description: |
+      The input we're trying to spoof
+runs:
+  using: 'node12'
+  main: 'index.js'
